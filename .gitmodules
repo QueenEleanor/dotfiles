@@ -1,0 +1,9 @@
+[submodule ".config/zsh/plugins/zsh-autosuggestions"]
+	path = .config/zsh/plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions
+[submodule ".config/zsh/plugins/zsh-syntax-highlighting"]
+	path = .config/zsh/plugins/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting
+[submodule "/home/0xElli0t/.config/nvim"]
+	path = /home/0xElli0t/.config/nvim
+	url = https://github.com/AstroNvim/AstroNvim

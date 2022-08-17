@@ -1,0 +1,18 @@
+#!/bin/python3
+import sys
+
+
+def main():
+    if len(sys.argv) != 2:
+        print("Usage: urlencode <value>")
+        sys.exit(-1)
+
+    out = ""
+    for char in sys.argv[1]:
+        out += f"%{hex(ord(char))[2:]}"
+
+    print(out)
+
+
+if __name__ == "__main__":
+    main()

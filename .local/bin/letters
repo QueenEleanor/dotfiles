@@ -1,0 +1,36 @@
+#!/bin/python
+import sys
+
+
+DIGITS = "0123456789"
+ENGLISH_BIG = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+ENGLISH_SMALL = "abcdefghijklmnopqrstuvwxyz"
+SYMBOLS = "!\"#$%&\'()*+,-./:;<=>?@[\]^_`{|}"
+
+
+def main():
+    if len(sys.argv) != 2:
+        print("usage: letters <options>")
+        sys.exit(-1)
+    options = []
+    for char in sys.argv[1]:
+        if char in list("Aads"):
+            options.append(char)
+        else:
+            print("only allowed options are ['A', 'a', 'd', 's']")
+            sys.exit(-1)
+
+    letters = ""
+    if "A" in options:
+        letters += ENGLISH_BIG
+    if "a" in options:
+        letters += ENGLISH_SMALL
+    if "d" in options:
+        letters += DIGITS
+    if "s" in options:
+        letters += SYMBOLS
+    
+    print(letters)
+
+if __name__ == "__main__":
+    main()
