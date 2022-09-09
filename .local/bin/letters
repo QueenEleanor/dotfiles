@@ -5,7 +5,7 @@ import sys
 DIGITS = "0123456789"
 ENGLISH_BIG = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 ENGLISH_SMALL = "abcdefghijklmnopqrstuvwxyz"
-SYMBOLS = "!\"#$%&\'()*+,-./:;<=>?@[\]^_`{|}"
+SYMBOLS = "!\"#$%&\'()*+,-./:;<=>?@[\]^_`{|}~"
 
 
 def main():
@@ -17,7 +17,7 @@ def main():
         if char in list("Aads"):
             options.append(char)
         else:
-            print("only allowed options are ['A', 'a', 'd', 's']")
+            print("Allowed options are [A, a, d s]")
             sys.exit(-1)
 
     letters = ""
@@ -31,6 +31,7 @@ def main():
         letters += SYMBOLS
     
     print(letters)
+
 
 if __name__ == "__main__":
     main()
