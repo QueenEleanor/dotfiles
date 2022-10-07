@@ -49,7 +49,7 @@ bindsym $mod+Shift+$down move down
 bindsym $mod+Shift+$up move up
 bindsym $mod+Shift+$right move right
 
-# window resizingt
+# window resizing
 bindsym $mod+Ctrl+$left resize shrink width 10 px or 10 ppt
 bindsym $mod+Ctrl+$down resize grow height 10 px or 10 ppt
 bindsym $mod+Ctrl+$up resize shrink height 10 px or 10 ppt
@@ -61,7 +61,7 @@ bindsym $mod+v split toggle
 # fullscreen
 bindsym $mod+f fullscreen toggle
 
-#  toggle between stacking / tabbed
+# toggle between stacking / tabbed
 bindsym $mod+s layout toggle tabbed splitv 
 
 # toggle tiling / floating
@@ -75,20 +75,19 @@ bindsym $mod+q kill
 
 # reload i3 configs
 bindsym $mod+Shift+c reload
-# reload i3
+
+# restart i3
 bindsym $mod+Shift+r restart
 
 # program startup keybinds
 bindsym $mod+t exec  "urxvt"
 bindsym $mod+d exec "rofi -show run"
+bindsym $mod+Shift+s exec "gscreenshot"
 
 # lock keybind
 bindsym $mod+Shift+x exec "i3lock --color 475263"
 
-# screenshot keybind
-bindsym $mod+Shift+s exec "gscreenshot"
-
-# special keys
+# audio keys
 bindsym XF86AudioRaiseVolume exec "pamixer --increase 5" 
 bindsym XF86AudioLowerVolume exec "pamixer --decrease 5"
 bindsym XF86AudioMute exec "pamixer --toggle-mute"
@@ -131,7 +130,7 @@ assign [class="discord"] $ws10
 # make some programs floating by default
 for_window [class="Gscreenshot"] floating enable
 
-# fuck them borders
+# remove window borders
 for_window [class=".*"] border pixel 0
 
 # gaps
@@ -156,22 +155,22 @@ exec --no-startup-id "feh --bg-scale $HOME/.config/i3/wallpaper.jpg"
 exec --no-startup-id "xinput disable 12"
 
 # window colors
-#                       border              background         text                 indicator
+# state                 border              background         text                 indicator
 client.focused          $bg_color           $bg_color          $text_color          #000000
 client.unfocused        $inactive_bg_color  $inactive_bg_color $inactive_text_color #000000
 client.focused_inactive $inactive_bg_color  $inactive_bg_color $inactive_text_color #000000
 client.urgent           $urgent_bg_color    $urgent_bg_color   $text_color          #000000
 
-# bottom status bar
+# status bar
 bar {
 	height 30
-        status_command i3blocks -c $HOME/.config/i3blocks/config
+    status_command i3blocks -c $HOME/.config/i3blocks/config
 	modifier $mod
 	separator_symbol "|"
 	colors {
 		background $bg_color
-	    	separator #757575
-		#                  border             background         text
+	  separator #757575
+		# state            border             background         text
 		focused_workspace  $bg_color          $bg_color          $text_color
 		inactive_workspace $inactive_bg_color $inactive_bg_color $inactive_text_color
 		urgent_workspace   $urgent_bg_color   $urgent_bg_color   $text_color
