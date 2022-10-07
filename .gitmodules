@@ -6,4 +6,5 @@
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
 [submodule "/home/personal/.config/nvim"]
 	path = /home/personal/.config/nvim
-	url = https://github.com/AstroNvim/AstroNvim
+	url = https://github.com/AstroNvim/AstroNvim/tree/nightly
+	branch = nightly
