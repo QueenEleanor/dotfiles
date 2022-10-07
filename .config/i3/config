@@ -55,8 +55,9 @@ bindsym $mod+Ctrl+$down resize grow height 10 px or 10 ppt
 bindsym $mod+Ctrl+$up resize shrink height 10 px or 10 ppt
 bindsym $mod+Ctrl+$right resize grow width 10 px or 10 ppt
 
-# toggle split direction
-bindsym $mod+v split toggle
+# splitting direction keybinds
+bindsym $mod+v split vertical
+bindsym $mod+h split horizontal
 
 # fullscreen
 bindsym $mod+f fullscreen toggle
