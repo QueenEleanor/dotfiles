@@ -17,6 +17,7 @@
 !/.local/bin/safe_rm
 !/.local/bin/letters
 !/.local/bin/urlencode
+!/.local/bin/loc
 
 /.config/*
 !/.config/i3/
