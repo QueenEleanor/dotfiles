@@ -29,20 +29,23 @@ export PATH="$PATH:$HOME/.local/bin/"
 export EDITOR="nvim"
 
 # aliases
-alias ll="ls -lah"
+alias ls="ls --color=auto -CF"
+alias grep="grep --color=auto"
+alias diff="diff --color=auto"
+alias ip="ip --color=auto"
+
+alias rm="safe_rm"
 alias nc="ncat"
 alias r="ranger"
-alias rm="safe_rm"
+alias c="clear"
+alias ll="ls -lah"
 alias die="poweroff"
 alias please="sudo"
 
-# allows using a keybind even if commadline contains text
-__keybind_start="a&>/dev/null;"
-
 # keybinds
-bindkey -s "^p" "$__keybind_start sp\n"
-bindkey -s "^r" "$__keybind_start ranger\n"
-bindkey -s "^l" "$__keybind_start clear\n"
+bindkey -s "^p" "sp\n"
+bindkey -s "^r" "ranger\n"
+bindkey -s "^l" "clear\n"
 
 # cd to saved pwd on shell-start
 cd $(cat $HOME/.cache/saved_pwd)
@@ -54,7 +57,7 @@ sp() {
 
 # automatically create a dir and cd to it
 mkcd() {
-    mkdir $@ && cd $_
+  mkdir $@ && cd $_
 }
 
 # load plugins
