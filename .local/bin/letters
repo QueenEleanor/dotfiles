@@ -8,14 +8,19 @@ ENGLISH_SMALL = "abcdefghijklmnopqrstuvwxyz"
 SYMBOLS = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~ "
 
 
+def print_err(err: str) -> None:
+    sys.stderr.buffer.write(f"{err}\n".encode("utf-8"))
+    sys.stderr.flush()
+
+
 def main():
     if len(sys.argv) != 2:
-        print("usage: letters <options>")
-        print("Options:")
-        print("    d - 0-9")
-        print("    A - A-Z")
-        print("    a - a-z")
-        print("    s - Other ASCII character")
+        print_err("usage: letters <options>")
+        print_err("Options:")
+        print_err("    d - 0-9")
+        print_err("    A - A-Z")
+        print_err("    a - a-z")
+        print_err("    s - Other ASCII character")
         sys.exit(-1)
 
     letters = ""
