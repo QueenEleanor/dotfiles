@@ -1,2 +1,3 @@
 set disassembly-flavor intel
-source /usr/share/gef/gef.py
+set debuginfod enabled on
+source /home/personal/.config/pwndbg/gdbinit.py
