@@ -117,15 +117,12 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
-# focus window urgent windows
+# focus on urgent windows
 focus_on_window_activation focus
 
 # assign apps to certain workspaces
 assign [class="firefox"] $ws1
 assign [class="URxvt"] $ws2
-assign [class="Steam"] $ws3
-assign [class="gdlauncher"] $ws3
-assign [class="Lutris"] $ws3
 assign [class="discord"] $ws10
 
 # make some programs floating by default
@@ -135,9 +132,8 @@ for_window [class="Gscreenshot"] floating enable
 for_window [class=".*"] border pixel 0
 
 # gaps
-gaps inner 10
-gaps outer 15
-gaps bottom 0
+gaps inner  25
+gaps outer -25
 
 # startup applications
 exec firefox
