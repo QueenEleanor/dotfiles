@@ -24,7 +24,7 @@ bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 
-# system variables
+# shell variables
 export PATH="$PATH:$HOME/.local/bin/"
 export EDITOR="nvim"
 
@@ -48,6 +48,7 @@ bindkey -s "^r" "ranger\n"
 bindkey -s "^l" "clear\n"
 
 # cd to saved pwd on shell-start
+cat $HOME/.cache/saved_pwd
 cd $(cat $HOME/.cache/saved_pwd)
 
 # save pwd
