@@ -5,29 +5,27 @@ import sys
 DIGITS = "0123456789"
 ENGLISH_BIG = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 ENGLISH_SMALL = "abcdefghijklmnopqrstuvwxyz"
-SYMBOLS = "!\"#$%&\'()*+,-./:;<=>?@[\]^_`{|}~"
+SYMBOLS = "!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~ "
 
 
 def main():
     if len(sys.argv) != 2:
         print("usage: letters <options>")
+        print("Options:")
+        print("    d - 0-9")
+        print("    A - A-Z")
+        print("    a - a-z")
+        print("    s - Other ASCII character")
         sys.exit(-1)
-    options = []
-    for char in sys.argv[1]:
-        if char in list("Aads"):
-            options.append(char)
-        else:
-            print("Allowed options are [A, a, d s]")
-            sys.exit(-1)
 
     letters = ""
-    if "A" in options:
+    if "A" in sys.argv[1]:
         letters += ENGLISH_BIG
-    if "a" in options:
+    if "a" in sys.argv[1]:
         letters += ENGLISH_SMALL
-    if "d" in options:
+    if "d" in sys.argv[1]:
         letters += DIGITS
-    if "s" in options:
+    if "s" in sys.argv[1]:
         letters += SYMBOLS
     
     print(letters)
