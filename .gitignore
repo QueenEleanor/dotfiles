@@ -17,7 +17,6 @@
     /.config/*
     !/.config/i3/
     !/.config/i3blocks/
-    !/.config/gtk-3.0/
     !/.config/zsh/
     !/.config/nvim/
     !/.config/astronvim/
