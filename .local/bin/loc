@@ -4,20 +4,22 @@ import os
 
 
 def main():
-    if len(sys.argv) != 2:
-        print(f"Usage: loc <file>")
+    if len(sys.argv) < 2:
+        print(f"Usage: loc <file> [<files>]")
         sys.exit(-1)
+    
+    files = sys.argv[1:]
+    for file in files:
+        if not os.path.exists(file):
+            print(f"{file}: Does not exist.")
+            continue
 
-    if not os.path.exists(sys.argv[1]):
-        print(f"{sys.argv[1]: Not found}")
-        sys.exit(-1)
-
-    loc = 0
-    with open(sys.argv[1], "r") as f:
-        for line in f:
-            if line != "\n":
-                loc += 1
-    print(loc)
+        loc = 0
+        with open(file, "r") as f:
+            for line in f:
+                if line != "\n":
+                    loc += 1
+        print(f"{file}: {loc}")
 
 
 if __name__ == "__main__":
