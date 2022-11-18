@@ -3,15 +3,20 @@ import sys
 import os
 
 
+def print_err(err: str) -> None:
+    sys.stderr.buffer.write(f"{err}\n".encode("utf-8"))
+    sys.stderr.flush()
+
+
 def main():
     if len(sys.argv) < 2:
-        print(f"Usage: loc <file> [<files>]")
+        print_err(f"Usage: loc <file> [<files>]")
         sys.exit(-1)
     
     files = sys.argv[1:]
     for file in files:
         if not os.path.exists(file):
-            print(f"{file}: Does not exist.")
+            print_err(f"{file}: Does not exist.")
             continue
 
         loc = 0
