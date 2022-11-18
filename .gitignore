@@ -6,7 +6,6 @@
   !/.zshrc
   !/.gdbinit
   !/.Xresources
-  !/.gtkrc-2.0
   !/.local/
     /.local/* 
     !/.local/bin/
