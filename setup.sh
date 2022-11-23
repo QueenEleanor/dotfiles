@@ -25,7 +25,7 @@ yay --noconfirm -Syy
 yay --noconfirm -S \
   rsync sudo pulseaudio pamixer lightdm lightdm-gtk-greeter \
   i3-gaps i3blocks i3lock rxvt-unicode rofi gscreenshot picom feh \
-  ttf-unifont ttf-roboto \
+  ttf-unifont ttf-roboto zsh \
   firefox discord
 
 echo "[*] Copying configs..."
@@ -34,6 +34,11 @@ sudo rsync -a $SCRIPT_DIR/ $HOME/
 
 echo "[*] Setting up window manager..."
 sudo systemctl enable lightdm.service
+
+echo "[*] Setting up shell..."
+USER="$(whoami)"
+xrdb $HOME/.Xresources
+sudo chsh -s /bin/zsh $USER
 
 echo -n "A reboot is required for changes to apply. Reboot now? [y/N] "
 read option
