@@ -7,7 +7,7 @@ if [[ !($option == "y" || $option == "Y" || $option == "yes") ]]; then
 fi
 echo -e "[*] Starting system configuration...\n"
 
-if [[ $(git --version &> /dev/null || echo "not found") == "not found"]]; then
+if [[ $(git --version &> /dev/null || echo "not found") == "not found" ]]; then
   echo "[*] installing git..."
   sudo pacman -S git
 fi
