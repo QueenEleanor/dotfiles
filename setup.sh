@@ -37,6 +37,6 @@ sudo systemctl enable lightdm.service
 
 echo -n "A reboot is required for changes to apply. Reboot now? [y/N] "
 read option
-if [[ !($option == "y" || $option == "Y" || $option == "yes") ]]; then
+if [[ ($option == "y" || $option == "Y" || $option == "yes") ]]; then
   sudo reboot
 fi
