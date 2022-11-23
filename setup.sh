@@ -14,10 +14,10 @@ fi
 
 if [[ $(yay --version &> /dev/null || echo "not found") == "not found" ]]; then
   echo "[*] Installing YAY..."
-  TMP_DIR="$(mktemp -d)"
-  git clone https://aur.archlinux.org/yay.git $TMP_DIR/
-  (cd $TMP_DIR/ && makepkg --noconfirm -si)
-  rm -rf $TMP_DIR/
+  tmp_dir="$(mktemp -d)"
+  git clone https://aur.archlinux.org/yay.git $tmp_dir/
+  (cd $tmp_dir/ && makepkg --noconfirm -si)
+  rm -rf $tmp_dir/
 fi
 
 echo "[*] Installing packages..."
@@ -29,16 +29,16 @@ yay --noconfirm -S \
   firefox discord
 
 echo "[*] Copying configs..."
-SCRIPT_DIR="$(cd -- $(dirname -- "${BASH_SOURCE[0]}") && pwd)"
-sudo rsync -a $SCRIPT_DIR/ $HOME/
+script_dir="$(cd -- $(dirname -- "${BASH_SOURCE[0]}") && pwd)"
+sudo rsync -a $script_dir/ $HOME/
 
 echo "[*] Setting up window manager..."
 sudo systemctl enable lightdm.service
 
 echo "[*] Setting up shell..."
-USER="$(whoami)"
+user="$(whoami)"
 xrdb $HOME/.Xresources
-sudo chsh -s /bin/zsh $USER
+sudo chsh -s /bin/zsh $user
 
 echo -n "A reboot is required for changes to apply. Reboot now? [y/N] "
 read option
