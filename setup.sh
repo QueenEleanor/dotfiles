@@ -7,7 +7,10 @@ if [[ !($option == "y" || $option == "Y" || $option == "yes") ]]; then
 fi
 echo -e "[*] Starting system configuration...\n"
 
-git --version &> /dev/null || (echo "Package 'git' is required to run this script" && exit -1)
+if [[ $(git --version &> /dev/null || echo "not found") == "not found"]]; then
+  echo "[*] installing git..."
+  sudo pacman -S git
+fi
 
 if [[ $(yay --version &> /dev/null || echo "not found") == "not found" ]]; then
   echo "[*] Installing YAY..."
