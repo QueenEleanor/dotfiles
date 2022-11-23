@@ -6,7 +6,7 @@
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
 [submodule "/home/personal/.config/nvim"]
 	path = /home/personal/.config/nvim
-	url = https://github.com/AstroNvim/AstroNvim/tree/main
+	url = https://github.com/AstroNvim/AstroNvim/
 	branch = main
 [submodule "/home/personal/.config/pwndbg"]
 	path = /home/personal/.config/pwndbg
