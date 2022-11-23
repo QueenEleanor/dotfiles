@@ -12,7 +12,7 @@ git --version || (echo "Package 'git' is required to run this script" && exit -1
 echo "Installing YAY..."
 TMP_DIR="$(mktemp -d)"
 git clone https://aur.archlinux.org/yay.git $TMP_DIR/
-(cd $TMP_DIR/yay/ && makepkg -si)
+(cd $TMP_DIR/ && makepkg -si)
 rm -rf $TMP_DIR/
 
 echo "Installing packages..."
