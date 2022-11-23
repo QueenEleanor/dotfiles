@@ -7,12 +7,12 @@ if [[ !($option == "y" || $option == "Y" || $option == "yes") ]]; then
 fi
 echo -e "Starting system configuration...\n"
 
-git --version || (echo "Package 'git' is required to run this script" && exit -1)
+git --version &> /dev/null || (echo "Package 'git' is required to run this script" && exit -1)
 
 echo "Installing YAY..."
 TMP_DIR="$(mktemp -d)"
 git clone https://aur.archlinux.org/yay.git $TMP_DIR/
-(cd $TMP_DIR/ && makepkg -si)
+(cd $TMP_DIR/ && makepkg --noconfirm -si)
 rm -rf $TMP_DIR/
 
 echo "Installing packages..."
