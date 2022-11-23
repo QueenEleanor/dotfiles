@@ -1,20 +1,27 @@
 #!/bin/bash
-
-echo -n "Continue system configuration? [y/N] "
+echo -n "Start system configuration? [y/N] "
 read option
 if [[ !($option == "y" || $option == "Y" || $option == "yes") ]]; then
   echo "Cancelled system configurtion"
   exit 0
 fi
-echo -e "Continuing system configuration...\n"
+echo -e "Starting system configuration...\n"
+
+git --version || (echo "Package 'git' is required to run this script" && exit -1)
+
+echo "Installing YAY..."
+TMP_DIR="$(mktemp -d)"
+git clone https://aur.archlinux.org/yay.git $TMP_DIR/
+(cd $TMP_DIR/yay/ && makepkg -si)
+rm -rf $TMP_DIR/
 
 echo "Installing packages..."
-sudo pacman --noconfirm -Syy 
-sudo pacman --noconfirm -S rsync lightdm lightdm-gtk-greeter i3-gaps i3blocks i3lock
+yay --noconfirm -Syy 
+yay --noconfirm -S rsync lightdm lightdm-gtk-greeter i3-gaps i3blocks i3lock
 
 echo "Copying configs..."
 SCRIPT_DIR="$(cd -- $(dirname -- "${BASH_SOURCE[0]}") && pwd)"
-sudo rsync -a "$SCRIPT_DIR/" "$HOME/"
+sudo rsync -a $SCRIPT_DIR/ $HOME/
 
 echo "Setting up window manager..."
 sudo systemctl enable lightdm.service
