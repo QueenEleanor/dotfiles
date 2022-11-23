@@ -24,7 +24,7 @@ echo "[*] Installing packages..."
 yay --noconfirm -Syy 
 yay --noconfirm -S \
   rsync sudo pulseaudio pamixer lightdm lightdm-gtk-greeter \
-  i3-gaps i3blocks i3lock urxvt rofi gscreenshot compton feh \
+  i3-gaps i3blocks i3lock rxvt-unicode rofi gscreenshot picom feh \
   ttf-unifont ttf-roboto \
   firefox discord
 
