@@ -9,11 +9,13 @@ echo -e "[*] Starting system configuration...\n"
 
 git --version &> /dev/null || (echo "Package 'git' is required to run this script" && exit -1)
 
-echo "[*] Installing YAY..."
-TMP_DIR="$(mktemp -d)"
-git clone https://aur.archlinux.org/yay.git $TMP_DIR/
-(cd $TMP_DIR/ && makepkg --noconfirm -si)
-rm -rf $TMP_DIR/
+if [[ $(yay --version &> /dev/null || echo "not found") == "not found" ]]; then
+  echo "[*] Installing YAY..."
+  TMP_DIR="$(mktemp -d)"
+  git clone https://aur.archlinux.org/yay.git $TMP_DIR/
+  (cd $TMP_DIR/ && makepkg --noconfirm -si)
+  rm -rf $TMP_DIR/
+fi
 
 echo "[*] Installing packages..."
 yay --noconfirm -Syy 
