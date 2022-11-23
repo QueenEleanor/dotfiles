@@ -5,17 +5,17 @@ if [[ !($option == "y" || $option == "Y" || $option == "yes") ]]; then
   echo "Cancelled system configurtion"
   exit 0
 fi
-echo -e "Starting system configuration...\n"
+echo -e "[*] Starting system configuration...\n"
 
 git --version &> /dev/null || (echo "Package 'git' is required to run this script" && exit -1)
 
-echo "Installing YAY..."
+echo "[*] Installing YAY..."
 TMP_DIR="$(mktemp -d)"
 git clone https://aur.archlinux.org/yay.git $TMP_DIR/
 (cd $TMP_DIR/ && makepkg --noconfirm -si)
 rm -rf $TMP_DIR/
 
-echo "Installing packages..."
+echo "[*] Installing packages..."
 yay --noconfirm -Syy 
 yay --noconfirm -S 
   rsync sudo pulseaudio pamixer lightdm lightdm-gtk-greeter \
@@ -23,11 +23,11 @@ yay --noconfirm -S
   ttf-unifont ttf-roboto \
   firefox discord
 
-echo "Copying configs..."
+echo "[*] Copying configs..."
 SCRIPT_DIR="$(cd -- $(dirname -- "${BASH_SOURCE[0]}") && pwd)"
 sudo rsync -a $SCRIPT_DIR/ $HOME/
 
-echo "Setting up window manager..."
+echo "[*] Setting up window manager..."
 sudo systemctl enable lightdm.service
 
 echo -n "A reboot is required for changes to apply. Reboot now? [y/N] "
