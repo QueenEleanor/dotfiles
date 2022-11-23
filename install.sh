@@ -14,7 +14,7 @@ sudo pacman --noconfirm -S rsync lightdm lightdm-gtk-greeter i3-gaps i3blocks i3
 
 echo "Copying configs..."
 SCRIPT_DIR="$(cd -- $(dirname -- "${BASH_SOURCE[0]}") && pwd)"
-sudo rsync -a "$HOME/" "$SCRIPT_DIR"
+sudo rsync -a "$SCRIPT_DIR/" "$HOME/"
 
 echo "Setting up window manager..."
 sudo systemctl enable lightdm.service
