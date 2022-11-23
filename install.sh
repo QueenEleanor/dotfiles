@@ -17,7 +17,11 @@ rm -rf $TMP_DIR/
 
 echo "Installing packages..."
 yay --noconfirm -Syy 
-yay --noconfirm -S rsync lightdm lightdm-gtk-greeter i3-gaps i3blocks i3lock
+yay --noconfirm -S 
+  rsync sudo pulseaudio pamixer lightdm lightdm-gtk-greeter \
+  i3-gaps i3blocks i3lock urxvt rofi gscreenshot compton feh \
+  ttf-unifont ttf-roboto \
+  firefox discord
 
 echo "Copying configs..."
 SCRIPT_DIR="$(cd -- $(dirname -- "${BASH_SOURCE[0]}") && pwd)"
