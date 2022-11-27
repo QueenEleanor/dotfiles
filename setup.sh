@@ -19,7 +19,7 @@ fi
 
 if [[ $(yay --version &> /dev/null || echo "not found") == "not found" ]]; then
   echo "[+] Installing YAY..."
-  tmp_dir="$(mktemp -d)"
+  tmp_dir=$(mktemp -d)
   git clone https://aur.archlinux.org/yay.git $tmp_dir/ || fail
   (cd $tmp_dir/ && makepkg --noconfirm -si)
   rm -rf $tmp_dir/
@@ -35,7 +35,7 @@ yay --noconfirm -S \
   || fail
 
 echo "[+] Copying configs..."
-script_dir="$(cd -- $(dirname -- "${BASH_SOURCE[0]}") && pwd)"
+script_dir=$(cd  $(dirname -- "${BASH_SOURCE[0]}") && pwd)
 sudo rsync -a $script_dir/ $HOME/
 
 echo "[+] Setting up window manager..."
@@ -44,6 +44,7 @@ sudo systemctl enable lightdm.service
 echo "[+] Setting up shell..."
 xrdb $HOME/.Xresources
 sudo chsh -s /bin/zsh $(whoami)
+touch $HOME/.cache/saved_pwd
 
 echo "[*] System configuration complete"
 
