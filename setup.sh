@@ -44,7 +44,7 @@ sudo systemctl enable lightdm.service
 echo "[+] Setting up shell..."
 xrdb $HOME/.Xresources
 sudo chsh -s /bin/zsh $(whoami)
-touch $HOME/.cache/saved_pwd
+(cd $HOME && pwd) > $HOME/.cache/saved_wd
 
 echo "[*] System configuration complete"
 
