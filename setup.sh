@@ -36,9 +36,8 @@ echo "[+] Setting up window manager..."
 sudo systemctl enable lightdm.service
 
 echo "[+] Setting up shell..."
-user="$(whoami)"
 xrdb $HOME/.Xresources
-sudo chsh -s /bin/zsh $user
+sudo chsh -s /bin/zsh $(whoami)
 
 echo -n "A reboot is required for changes to apply. Reboot now? [y/N] "
 read option
