@@ -53,7 +53,7 @@ bindkey -s "^l" "clear\n"
 
 # save wd
 swd() {
-	pwd > $HOME/.cache/saved_pwd
+	pwd > $HOME/.cache/saved_wd
 }
 
 # automatically create a dir and cd to it
@@ -66,5 +66,5 @@ source $HOME/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting
 source $HOME/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # cd to saved wd on shell-start
-cat $HOME/.cache/saved_pwd
-cd $(cat $HOME/.cache/saved_pwd)
+cat $HOME/.cache/saved_wd
+cd $(cat $HOME/.cache/saved_wd)
