@@ -27,7 +27,7 @@ fi
 
 echo "[+] Installing packages..."
 yay --noconfirm -Syy || fail
-yay --noconfirm -S \
+yay --noconfirm --needed -S \
   rsync sudo pulseaudio pamixer lightdm lightdm-gtk-greeter \
   i3-gaps i3blocks i3lock rxvt-unicode rofi gscreenshot picom feh \
   ttf-unifont ttf-roboto zsh \
