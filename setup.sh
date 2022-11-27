@@ -1,4 +1,9 @@
 #!/bin/bash
+fail() {
+  echo "Installation Failed. Try again"
+  exit -1
+}
+
 echo -n "Start system configuration? [y/N] "
 read option
 if [[ !($option == "y" || $option == "Y" || $option == "yes") ]]; then
