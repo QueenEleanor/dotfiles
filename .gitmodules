@@ -1,12 +1,12 @@
 [submodule "/home/personal/.config/zsh/plugins/zsh-autosuggestions"]
-	path = /home/personal/.config/zsh/plugins/zsh-autosuggestions
+	path = .config/zsh/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
 [submodule "/home/personal/.config/zsh/plugins/zsh-syntax-highlighting"]
-	path = /home/personal/.config/zsh/plugins/zsh-syntax-highlighting
+	path = .config/zsh/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
 [submodule "/home/personal/.config/nvim"]
-	path = /home/personal/.config/nvim
+	path = .config/nvim
 	url = https://github.com/AstroNvim/AstroNvim/
 [submodule "/home/personal/.config/pwndbg"]
-	path = /home/personal/.config/pwndbg
+	path = .config/pwndbg
 	url = https://github.com/pwndbg/pwndbg
