@@ -14,7 +14,7 @@ echo -e "[*] Starting system configuration...\n"
 
 if [[ $(git --version &> /dev/null || echo "not found") == "not found" ]]; then
   echo "[+] installing git..."
-  sudo pacman -S git || fail()
+  sudo pacman -S git || fail
 fi
 
 if [[ $(yay --version &> /dev/null || echo "not found") == "not found" ]]; then
