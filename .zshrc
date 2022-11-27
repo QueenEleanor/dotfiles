@@ -46,16 +46,13 @@ alias gs="git status"
 alias gc="git commit"
 
 # keybinds
-bindkey -s "^p" "sp\n"
+bindkey -s "^p" "swd\n"
 bindkey -s "^r" "ranger\n"
 bindkey -s "^l" "clear\n"
 
-# cd to saved pwd on shell-start
-cat $HOME/.cache/saved_pwd
-cd $(cat $HOME/.cache/saved_pwd)
 
-# save pwd
-sp() {
+# save wd
+swd() {
 	pwd > $HOME/.cache/saved_pwd
 }
 
@@ -67,3 +64,7 @@ mkcd() {
 # load plugins
 source $HOME/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $HOME/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# cd to saved wd on shell-start
+cat $HOME/.cache/saved_pwd
+cd $(cat $HOME/.cache/saved_pwd)
