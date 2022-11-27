@@ -12,10 +12,8 @@ if [[ !($option == "y" || $option == "Y" || $option == "yes") ]]; then
 fi
 echo -e "[*] Starting system configuration..."
 
-if [[ $(git --version &> /dev/null || echo "not found") == "not found" ]]; then
-  echo "[+] installing git..."
-  sudo pacman -S git || fail
-fi
+echo "[+] installing git..."
+sudo pacman -S --needed git || fail
 
 if [[ $(yay --version &> /dev/null || echo "not found") == "not found" ]]; then
   echo "[+] Installing YAY..."
@@ -26,8 +24,8 @@ if [[ $(yay --version &> /dev/null || echo "not found") == "not found" ]]; then
 fi
 
 echo "[+] Installing packages..."
-yay --noconfirm -Syy || fail
-yay --noconfirm --needed -S \
+yay -Syy --noconfirm || fail
+yay -S   --noconfirm --needed \
   rsync sudo pulseaudio pamixer lightdm lightdm-gtk-greeter \
   i3-gaps i3blocks i3lock rxvt-unicode rofi gscreenshot picom feh \
   ttf-unifont ttf-roboto zsh \
