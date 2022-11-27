@@ -1,6 +1,6 @@
 #!/bin/bash
 fail() {
-  echo "Installation Failed. Try again"
+  echo "[*] Installation Failed. Try again"
   exit -1
 }
 
@@ -10,7 +10,7 @@ if [[ !($option == "y" || $option == "Y" || $option == "yes") ]]; then
   echo "Cancelled system configurtion"
   exit 0
 fi
-echo -e "[*] Starting system configuration...\n"
+echo -e "[*] Starting system configuration..."
 
 if [[ $(git --version &> /dev/null || echo "not found") == "not found" ]]; then
   echo "[+] installing git..."
@@ -44,6 +44,8 @@ sudo systemctl enable lightdm.service
 echo "[+] Setting up shell..."
 xrdb $HOME/.Xresources
 sudo chsh -s /bin/zsh $(whoami)
+
+echo "[*] System configuration complete"
 
 echo -n "A reboot is required for changes to apply. Reboot now? [y/N] "
 read option
