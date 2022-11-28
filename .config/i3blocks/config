@@ -7,10 +7,6 @@ label=
 command=echo -n " " && pamixer --get-volume-human
 interval=repeat
 
-[memory]
-command=free -h | grep -Evi "total(\s+)used(\s+)free" | awk '{ print $1" ("$3"/"$2")"}' | tr "\n" " " && echo -ne "\n"
-interval=1
-
 [date]
 label=
 command=date "+ %Y-%0m-%0d"
