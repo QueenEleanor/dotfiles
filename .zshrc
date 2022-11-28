@@ -33,17 +33,16 @@ alias ls="ls --color=auto -CF"
 alias grep="grep --color=auto"
 alias diff="diff --color=auto"
 alias ip="ip --color=auto"
-alias rm="safe_rm"
+alias ll="ls -lah"
 
+alias rm="safe_rm"
 alias nc="ncat"
 alias r="ranger"
-alias c="clear"
-alias ll="ls -lah"
 alias die="poweroff"
 alias please="sudo"
 
 alias gs="git status"
-alias gc="git commit"
+alias gc="git commit -a"
 
 # keybinds
 bindkey -s "^p" "swd\n"
