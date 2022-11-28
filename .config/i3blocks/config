@@ -3,7 +3,8 @@ separator=true
 separator_block_width=15
 
 [volume]
-command=echo "Volume: $(pamixer --get-volume-human)"
+label=
+command=echo -n " " && pamixer --get-volume-human
 interval=repeat
 
 [memory]
@@ -11,10 +12,12 @@ command=free -h | grep -Evi "total(\s+)used(\s+)free" | awk '{ print $1" ("$3"/"
 interval=1
 
 [date]
-command=date "+%Y-%0m-%0d"
+label=
+command=date "+ %Y-%0m-%0d"
 interval=60
 
 [time]
-command=date "+%H:%M:%S"
+label=
+command=date "+ %H:%M:%S"
 interval=1
 
