@@ -31,8 +31,6 @@ set $font_size 12
 
 # fonts
 font pango:monospace $font_size
-font pango:unfiont $font_size
-font pango:roboto $font_size
 
 # move floating windows with mod+mouse 
 floating_modifier $mod
