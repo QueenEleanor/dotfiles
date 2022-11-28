@@ -27,8 +27,8 @@ echo "[+] Installing packages..."
 yay -Syy --noconfirm || fail
 yay -S   --noconfirm --needed \
   rsync sudo pulseaudio pamixer lightdm lightdm-gtk-greeter \
-  i3-gaps i3blocks i3lock rofi gscreenshot picom feh neovim \
-  ttf-font-awesome rxvt-unicode zsh firefox discord \
+  i3-gaps i3blocks i3lock rofi gscreenshot picom feh \
+  ttf-font-awesome rxvt-unicode zsh neovim gdb firefox discord \
   || fail
 
 echo "[+] Copying configs..."
@@ -46,6 +46,10 @@ echo "[+] Setting up shell..."
 xrdb $HOME/.Xresources
 sudo chsh -s /bin/zsh $(whoami)
 (cd $HOME && pwd) > $HOME/.cache/saved_wd
+
+echo "[+] setting up gdb..."
+$HOME/.config/pwndbg/setup.sh || fail
+git restore $HOME/.gdbinit
 
 echo "[*] System configuration complete"
 
