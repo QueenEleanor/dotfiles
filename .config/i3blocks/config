@@ -10,7 +10,11 @@ interval=repeat
 command=free -h | grep -Evi "total(\s+)used(\s+)free" | awk '{ print $1" ("$3"/"$2")"}' | tr "\n" " " && echo -ne "\n"
 interval=1
 
-[datetime]
-command=date "+%Y-%0m-%0d %H:%M:%S"
+[date]
+command=date "+%Y-%0m-%0d"
+interval=60
+
+[time]
+command=date "+%H:%M:%S"
 interval=1
 
