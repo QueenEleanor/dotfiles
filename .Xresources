@@ -1,5 +1,5 @@
 ! font
-URxvt.font: xft:monospace:size=12
+URxvt.font: xft:monospace:size=12,xft:font-awesome:size=12
 
 ! fuck them scrollbar
 URxvt.scrollBar: false
