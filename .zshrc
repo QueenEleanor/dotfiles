@@ -47,6 +47,7 @@ alias gc="git commit -a"
 # keybinds
 bindkey -s "^p" "swd\n"
 bindkey -s "^r" "ranger\n"
+bindkey -s "^b" "btop\n"
 bindkey -s "^l" "clear\n"
 
 

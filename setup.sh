@@ -28,7 +28,7 @@ yay -Syy --noconfirm || fail
 yay -S   --noconfirm --needed \
   rsync sudo pulseaudio pamixer lightdm lightdm-gtk-greeter \
   i3-gaps i3blocks i3lock rofi gscreenshot picom feh \
-  ttf-font-awesome rxvt-unicode zsh neovim firefox discord \
+  ttf-font-awesome rxvt-unicode zsh btop neovim firefox discord \
   || fail
 
 echo "[+] Copying configs..."
