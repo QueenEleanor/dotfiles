@@ -50,7 +50,9 @@ sudo chsh -s /bin/zsh $(whoami)
 echo "[+] Setting up gdb..."
 (cd $HOME/.config/pwndbg && ./setup.sh) || failed="true"
 git restore $HOME/.gdbinit
-if [[ $failed == "true" ]]; then fail; fi
+if [[ $failed == "true" ]]; then
+  fail;
+fi
 
 echo "[*] System configuration complete"
 
