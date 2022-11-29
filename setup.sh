@@ -48,11 +48,13 @@ sudo chsh -s /bin/zsh $(whoami)
 (cd $HOME && pwd) > $HOME/.cache/saved_wd
 
 echo "[+] Setting up gdb..."
-(cd $HOME/.config/pwndbg && ./setup.sh) || failed="true"
-git restore $HOME/.gdbinit
-if [[ $failed == "true" ]]; then
-  fail;
-fi
+# !!! temporary commented due to issue in pwndbg setup.sh !!!
+# (cd $HOME/.config/pwndbg && ./setup.sh) || failed="true"
+# git restore $HOME/.gdbinit
+# if [[ $failed == "true" ]]; then
+#   fail;
+# fi
+yay -S gdb
 
 echo "[*] System configuration complete"
 
