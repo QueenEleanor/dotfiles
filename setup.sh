@@ -54,7 +54,7 @@ echo "[+] Setting up gdb..."
 # if [[ $failed == "true" ]]; then
 #   fail;
 # fi
-yay -S gdb
+yay -S --noconfirm --needed gdb
 
 echo "[*] System configuration complete"
 
