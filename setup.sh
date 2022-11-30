@@ -37,7 +37,7 @@ sudo rsync -a $script_dir/ $HOME/
 
 echo "[+] Updating repository submodules..." 
 (cd $HOME && git submodule init)
-(cd $HOME && git submodule update)
+(cd $HOME && git submodule update --recursive)
 
 echo "[+] Setting up window manager..."
 sudo systemctl enable lightdm.service
