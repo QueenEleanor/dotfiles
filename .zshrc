@@ -25,7 +25,7 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 
 # shell variables
-export PATH="$PATH:$HOME/.local/bin/"
+export PATH="$PATH:$HOME/.local/bin/:$HOME/.cargo/bin/"
 export EDITOR="nvim"
 
 # aliases
