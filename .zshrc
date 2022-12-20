@@ -61,6 +61,11 @@ mkcd() {
   mkdir $@ && cd $_
 }
 
+# create a temporary directory and cd to it
+tmpdir() {
+	cd $(mktemp -d)
+}
+
 # load plugins
 source $HOME/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $HOME/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
