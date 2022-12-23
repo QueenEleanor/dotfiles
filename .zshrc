@@ -40,6 +40,7 @@ alias nc="ncat"
 alias r="ranger"
 alias die="poweroff"
 alias please="sudo"
+alias ropgadget="ROPgadget"
 
 alias gs="git status"
 alias gc="git commit -a"
