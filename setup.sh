@@ -46,6 +46,8 @@ echo "[+] Setting up shell..."
 xrdb $HOME/.Xresources
 sudo chsh -s /bin/zsh $(whoami)
 (cd $HOME && pwd) > $HOME/.cache/saved_wd
+mkdir -p $HOME/.cache/zsh/
+touch $HOME/.cache/zsh/history
 
 echo "[+] Setting up gdb..."
 (cd $HOME/.config/pwndbg && ./setup.sh) || failed="true"
