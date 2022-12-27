@@ -82,7 +82,7 @@ bindsym $mod+Shift+r restart
 # program startup keybinds
 bindsym $mod+t exec  "urxvt"
 bindsym $mod+d exec "rofi -show run"
-bindsym $mod+Shift+s exec "gscreenshot"
+bindsym $mod+Shift+s exec "flameshot gui"
 
 # lock keybind
 bindsym $mod+Shift+x exec "i3lock --color 475263"
@@ -124,9 +124,6 @@ assign [class="firefox"] $ws1
 assign [class="URxvt"] $ws2
 assign [class="discord"] $ws10
 
-# make some programs floating by default
-for_window [class="Gscreenshot"] floating enable
-
 # remove window borders
 for_window [class=".*"] border pixel 0
 
@@ -141,6 +138,7 @@ exec discord
 
 # startup services
 exec --no-startup-id compton
+exec --no-startup-id flameshot
 
 # wallapaper
 exec --no-startup-id "feh --bg-scale $HOME/.config/i3/wallpaper.jpg"
