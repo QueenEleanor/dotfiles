@@ -10,7 +10,7 @@ if [[ !($option == "y" || $option == "Y" || $option == "yes") ]]; then
   echo "Cancelled system configurtion"
   exit 0
 fi
-echo -e "[*] Starting system configuration..."
+echo "[*] Starting system configuration..."
 
 echo "[+] installing git..."
 sudo pacman -S --needed git || fail
@@ -58,7 +58,7 @@ fi
 
 echo "[*] System configuration complete"
 
-echo -n "A reboot is required for changes to apply. Reboot now? [y/N] "
+echo -n "A reboot is required for some changes to apply. Reboot now? [y/N] "
 read option
 if [[ ($option == "y" || $option == "Y" || $option == "yes") ]]; then
   sudo reboot
